@@ -1,35 +1,20 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
-  <div class="p-4 mx-auto flex  flex-wrap items-center justify-between">
-    <a  class="space-x-3 flex items-center rtl:space-x-reverse">
+  <div class="p-4 mx-auto flex w-11/12 items-center justify-between">
+    <a class="space-x-3 flex items-center rtl:space-x-reverse" routerLink="/">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-blue-600">
         <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
       </svg>
       
         <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">ShipHive</span>
     </a>
-    <button data-collapse-toggle="navbar-default" type="button" class="p-2 w-10 h-10 text-gray-500 inline-flex items-center justify-center rounded-lg text-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 md:hidden dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="p-4 mt-4 border-gray-100 bg-gray-50 flex flex-col rounded-lg border font-medium rtl:space-x-reverse dark:bg-gray-800 dark:border-gray-700 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
+   
+    <div class=" md:w-auto" id="navbar-default">
+      <ul class="font-medium  dark:border-gray-700 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
+        
         <li>
-          <a href="#" class="py-2 px-3 text-white bg-blue-700 block rounded dark:text-white md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+          <a  routerLink="/message-us" class="text-white md:border-0 md:p-0  dark:hover:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Contact Us</a>
         </li>
-        <li>
-          <a href="#" class="py-2 px-3 text-gray-900 block rounded hover:bg-gray-100 dark:text-white md:border-0 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">About</a>
-        </li>
-        <li>
-          <a href="#" class="py-2 px-3 text-gray-900 block rounded hover:bg-gray-100 dark:text-white md:border-0 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Services</a>
-        </li>
-        <li>
-          <a href="#" class="py-2 px-3 text-gray-900 block rounded hover:bg-gray-100 dark:text-white md:border-0 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Pricing</a>
-        </li>
-        <li>
-          <a href="#" class="py-2 px-3 text-gray-900 block rounded hover:bg-gray-100 dark:text-white md:border-0 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Contact</a>
-        </li>
+  
       </ul>
     </div>
   </div>
