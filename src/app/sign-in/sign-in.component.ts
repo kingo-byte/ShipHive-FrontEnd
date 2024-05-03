@@ -13,8 +13,8 @@ export class SignInComponent {
   constructor(private formBuilder: FormBuilder, private router: Router) {
 
     this.signInForm = this.formBuilder.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required]]
+      email: ["", [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/), Validators.email]],
+      password: ["", [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]]
     })
   }
 
