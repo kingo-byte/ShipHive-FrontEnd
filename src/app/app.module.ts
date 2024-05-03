@@ -10,19 +10,23 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import { MessageUsComponent } from './message-us/message-us.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'message-us', component: MessageUsComponent}
+  {path:'', component:SignInComponent, pathMatch: 'full'}
+  ,{ path: 'home', component: HomeComponent },
+  { path:'contact-us', component: ContactUsComponent }
 ];
 
 @NgModule({
-  declarations: [
+  declarations:[
     AppComponent,
     HomeComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

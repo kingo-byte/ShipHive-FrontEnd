@@ -1,0 +1,41 @@
+<form class="bg-white" [formGroup]="contactForm" >
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 ">Get in touch</h2>
+       
+        <div class="space-y-8">
+            <div >
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    [ngClass]="{'border-1 border-red-500': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || contactForm.get('email')?.dirty)}" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@gmail.com" formControlName="email">
+                <div *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+                    <p class="text-red-500">Email is required and must be valid</p>
+                </div>
+            </div>
+            <div>
+                <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 ">Subject</label>
+                <input
+                 type="text"
+                 id="subject"
+                 [ngClass]="{'border-1 border-red-500': contactForm.get('email')?.invalid && (contactForm.get('subject')?.touched || contactForm.get('subject')?.dirty)}" 
+                   class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@gmail.com" formControlName="email" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500" placeholder="Let us know how we can help you" formControlName="subject">
+                <div *ngIf="contactForm.get('subject')?.invalid && (contactForm.get('subject')?.dirty || contactForm.get('subject')?.touched)">
+                    <p class="text-red-500">Subject is required</p>
+                </div>
+            </div>
+            <div class="sm:col-span-2">
+                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Your message</label>
+                <textarea 
+                id="message" 
+                rows="6" 
+                [ngClass]="{'border-1 border-red-500': contactForm.get('email')?.invalid && (contactForm.get('message')?.touched || contactForm.get('message')?.dirty)}" 
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@gmail.com" formControlName="email" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 " placeholder="Leave a comment..." formControlName="message"></textarea>
+                <div *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)">
+                    <p class="text-red-500">Message is required and must not exceed 2000 characters</p>
+                </div>
+            </div>
+            <button type="button" (click)="onSubmit()" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-gray-900">Send message</button>
+        </div>
+    </div>
+</form>
