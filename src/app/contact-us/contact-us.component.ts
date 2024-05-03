@@ -12,9 +12,9 @@ export class ContactUsComponent {
   constructor()
   {
     this.contactForm = new FormGroup({
-      email : new FormControl("", [Validators.email]),
+      email : new FormControl("", [Validators.required,Validators.email]),
       subject: new FormControl("", [Validators.required]),
-      message: new FormControl("", [Validators.maxLength(2000)])
+      message: new FormControl("", [Validators.required,Validators.maxLength(2000)])
     })
   }
   resetForm() : void 
