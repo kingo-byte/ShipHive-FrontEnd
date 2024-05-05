@@ -14,6 +14,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
+
 const routes: Routes = [
   {path:'', component:SignInComponent, pathMatch: 'full'}
   ,{ path: 'home', component: HomeComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     FooterComponent,
     SignInComponent,
     ContactUsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
