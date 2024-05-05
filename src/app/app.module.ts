@@ -1,4 +1,4 @@
-  import { Input, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,13 +13,15 @@ import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
-  {path:'', component:SignInComponent, pathMatch: 'full'}
-  ,{ path: 'home', component: HomeComponent },
+  {path:'', component:SignInComponent, pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
   { path:'contact-us', component: ContactUsComponent },
-  {path: 'product-details', component: ProductDetailsComponent}
+  {path: 'product-details', component: ProductDetailsComponent},
+  { path: 'sign-up', component: SignUpComponent}
 ];
 
 @NgModule({
@@ -31,6 +33,7 @@ const routes: Routes = [
     SignInComponent,
     ContactUsComponent,
     ProductDetailsComponent,
+    SignUpComponent,
     
   ],
   imports: [
