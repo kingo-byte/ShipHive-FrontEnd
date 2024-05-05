@@ -1,4 +1,4 @@
-  import { NgModule } from '@angular/core';
+  import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -12,11 +12,13 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {path:'', component:SignInComponent, pathMatch: 'full'}
   ,{ path: 'home', component: HomeComponent },
-  { path:'contact-us', component: ContactUsComponent }
+  { path:'contact-us', component: ContactUsComponent },
+  {path: 'product-details', component: ProductDetailsComponent}
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const routes: Routes = [
     NavComponent,
     FooterComponent,
     SignInComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    CommonModule
+    CommonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

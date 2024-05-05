@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,20 +7,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
-  contactForm: FormGroup;
+  contactForm : FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-
-    this.contactForm = this.formBuilder.group({
-      email: ["", [Validators.required, Validators.email]],
-      subject: ["", [Validators.required]],
-      message: ["", [Validators.required, Validators.maxLength(2000)]]
+  constructor()
+  {
+    this.contactForm = new FormGroup({
+      email : new FormControl("", [Validators.required,Validators.email]),
+      subject: new FormControl("", [Validators.required]),
+      message: new FormControl("", [Validators.required,Validators.maxLength(2000)])
     })
   }
+  resetForm() : void 
+  {   
+    this.contactForm.reset();
+  }
 
-  onSubmit(): void {
+  onSubmit(): void
+  {
     if (this.contactForm.valid)
-      alert("Submitted");
+    {
+      alert("Submited");
+      this.resetForm();
+    }
     else
       this.contactForm.markAllAsTouched();
   }
