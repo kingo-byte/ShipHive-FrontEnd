@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';
-import { NavComponent } from './components/nav/nav.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './Component/home/home.component';
+import { NavComponent } from './Component/nav/nav.component';
+import { FooterComponent } from './Component/footer/footer.component';
+import { SignInComponent } from './Component/sign-in/sign-in.component';
+import { ContactUsComponent } from './Component/contact-us/contact-us.component';
+import { ProductDetailsComponent } from './Component/product-details/product-details.component';
+import { SignUpComponent } from './Component/sign-up/sign-up.component';
+import { ProfileComponent } from './Component/profile/profile.component';
 
 
 
