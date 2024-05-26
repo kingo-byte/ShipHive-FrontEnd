@@ -1,4 +1,4 @@
-import {  NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -19,16 +19,16 @@ import { ProfileComponent } from './Component/profile/profile.component';
 
 
 const routes: Routes = [
-  {path:'', component:SignInComponent, pathMatch: 'full'},
+  { path: '', component: SignInComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path:'contact-us', component: ContactUsComponent },
-  {path: 'product-details', component: ProductDetailsComponent},
-  { path: 'sign-up', component: SignUpComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({
-  declarations:[
+  declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
@@ -38,7 +38,7 @@ const routes: Routes = [
     ProductDetailsComponent,
     SignUpComponent,
     ProfileComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -48,9 +48,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     CommonModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
