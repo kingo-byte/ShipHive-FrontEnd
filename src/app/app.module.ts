@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 const routes: Routes = [
