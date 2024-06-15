@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { AuthorizationService } from '../../services/authorization.service';
 import { SignInDto } from '../../services/models/dtos';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -15,7 +17,8 @@ export class SignInComponent {
   constructor(
     private formBuilder: FormBuilder, 
     private router: Router,
-    private authService: AuthorizationService
+    private authService: AuthorizationService,
+    private toastr: ToastrService
   ) {
 
     this.signInForm = this.formBuilder.group({
@@ -37,7 +40,6 @@ export class SignInComponent {
         next: (res) => {
           localStorage.setItem('token', res.baseResponse?.token!);
           this.router.navigate(['/home']);
-  
           },
         error: (err)=> {
               console.log(err.error);

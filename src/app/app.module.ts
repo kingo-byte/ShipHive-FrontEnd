@@ -15,8 +15,11 @@ import { ContactUsComponent } from './Component/contact-us/contact-us.component'
 import { ProductDetailsComponent } from './Component/product-details/product-details.component';
 import { SignUpComponent } from './Component/sign-up/sign-up.component';
 import { ProfileComponent } from './Component/profile/profile.component';
-
-
+import { LoadingComponent } from './Component/loading/loading.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './interceptors/http-request-interceptor';
 
 const routes: Routes = [
   { path: '', component: SignInComponent, pathMatch: 'full' },
@@ -38,7 +41,7 @@ const routes: Routes = [
     ProductDetailsComponent,
     SignUpComponent,
     ProfileComponent,
-
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +51,15 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
 
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
