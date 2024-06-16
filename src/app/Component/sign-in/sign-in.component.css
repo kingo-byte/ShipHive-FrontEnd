@@ -1,0 +1,18 @@
+ :root {
+    --main: #0191da;
+}
+
+#btn-signIn
+{
+    background-color: var(--main);
+}
+
+#a-forgot-password
+{
+    color: var(--main);
+}
+
+#a-sign-up
+{
+    color: var(--main);
+}

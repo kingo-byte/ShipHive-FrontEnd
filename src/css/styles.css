@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --main: #0191da;
+}
+
 body
 {
     margin: 0;
