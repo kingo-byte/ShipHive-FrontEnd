@@ -21,15 +21,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/http-request-interceptor';
 
-const routes: Routes = [
-  { path: '', component: SignInComponent, pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'contact-us', component: ContactUsComponent },
-  { path: 'product-details', component: ProductDetailsComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  { path: 'profile', component: ProfileComponent }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +39,6 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
