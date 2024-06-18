@@ -10,9 +10,11 @@ body
 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+
 }
 
-app-profile {
-    background: red;
-  }
+app-profile 
+{
+    flex-grow: 1;
+}
