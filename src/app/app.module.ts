@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +18,7 @@ import { LoadingComponent } from './Component/loading/loading.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoadingInterceptor } from './interceptors/http-request-interceptor';
+import { LoadingInterceptor } from './interceptors/loading-request-interceptor';
 import { AuthInterceptor } from './interceptors/auth-request-Interceptor';
 import { TokenRefreshInterceptor } from './interceptors/token-refresh-interceptor';
 
