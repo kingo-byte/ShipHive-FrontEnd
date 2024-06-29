@@ -16,6 +16,6 @@ export class AuthorizationService {
 
   login(signInDto: SignInDto):Observable<LoginResponse>
   {
-    return this.http.post(`${this.apiUrl}/Login`, signInDto);
+    return this.http.post<LoginResponse>(`${this.apiUrl}/Login`, signInDto);
   }
 }

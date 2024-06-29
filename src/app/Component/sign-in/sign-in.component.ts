@@ -38,11 +38,11 @@ export class SignInComponent {
 
       this.authService.login(signInDto).subscribe({
         next: (res) => {
-          localStorage.setItem('token', res.baseResponse?.token!);
+          sessionStorage.setItem('token', res.token!);
           this.router.navigate(['/home']);
           },
-        error: (err)=> {
-              console.log(err.error);
+        error: (err)=> { 
+              this.toastr.error(err.error);
           }
       })
     } else {

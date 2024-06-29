@@ -1,9 +1,8 @@
 interface BaseResponse {
     token: string;
 }
-
-interface LoginResponse {
-    baseResponse?: BaseResponse;
+interface LoginResponse extends BaseResponse{
+    
 }
 
 export { LoginResponse }
