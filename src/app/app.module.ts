@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/http-request-interceptor';
+import { AuthInterceptor } from './interceptors/auth-request-Interceptor';
+import { TokenRefreshInterceptor } from './interceptors/token-refresh-interceptor';
 
 @NgModule({
   declarations: [
@@ -46,10 +48,13 @@ import { LoadingInterceptor } from './interceptors/http-request-interceptor';
       timeOut: 10000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-    }),
-
+    })
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }],
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenRefreshInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

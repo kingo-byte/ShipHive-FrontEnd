@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { finalize, delay, catchError, switchMap } from 'rxjs/operators';
-import { LoadingService } from '../services/loading.service';
+import { switchMap, catchError } from 'rxjs/operators';
 import { AuthorizationService } from '../services/authorization.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable()
-export class LoadingInterceptor implements HttpInterceptor {
+export class TokenRefreshInterceptor implements HttpInterceptor {
   private jwtHelper: JwtHelperService;
 
-  constructor(
-    private loadingService: LoadingService,
-    private authService: AuthorizationService 
-  ) {
+  constructor(private authService: AuthorizationService) {
     this.jwtHelper = new JwtHelperService();
   }
 
@@ -32,28 +28,20 @@ export class LoadingInterceptor implements HttpInterceptor {
               Authorization: `Bearer ${newToken}`
             }
           });
-          this.loadingService.show();
-          return next.handle(clonedReq).pipe(
-            delay(1000),
-            finalize(() => this.loadingService.hide())
-          );
+          return next.handle(clonedReq);
         }),
         catchError((error: any) => {
-          this.loadingService.hide();
           return of(error);
         })
       );
     } else {
-      this.loadingService.show();
+      // If the token is not expiring, continue with the request as is
       const clonedReq = req.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`
         }
       });
-      return next.handle(clonedReq).pipe(
-        delay(1000),
-        finalize(() => this.loadingService.hide())
-      );
+      return next.handle(clonedReq);
     }
   }
 
