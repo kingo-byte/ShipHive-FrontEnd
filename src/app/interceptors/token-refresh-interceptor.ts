@@ -16,7 +16,7 @@ export class TokenRefreshInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = sessionStorage.getItem('token');
     const tokenIsExpiring = this.isTokenExpiring(token);
-    const userId = 123; // Replace with logic to get the actual user ID
+    const userId = 3; // Replace with logic to get the actual user ID
 
     if (tokenIsExpiring) {
       return this.authService.refreshToken(userId).pipe(
